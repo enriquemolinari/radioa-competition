@@ -16,6 +16,6 @@ public class Main {
    System.out.println(radioCompetition.description());
   }
 
-  a.addInscription(1, 1);
+  a.addInscription(2, 2);
  }
 }

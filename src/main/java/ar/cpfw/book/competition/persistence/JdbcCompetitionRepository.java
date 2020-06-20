@@ -65,24 +65,38 @@ public class JdbcCompetitionRepository implements CompetitionRepository {
  }
 
  @Override
- public void addInscription(int idCompetitor, int idCompetition, int addPoints) {
+ public void addInscription(int idCompetitor, int idCompetition,
+   int addPoints) {
 
   Connection c = connection();
   try {
    c.setAutoCommit(false);
-   
-   //TODO: ver como sumar los puntos addPoints
-   
-   var st = c.prepareStatement(
-     "insert into competitor(id_listener, points) " + "values(?,?)",
-     Statement.RETURN_GENERATED_KEYS);
 
-   st.setInt(1, idCompetitor);
-   st.setInt(2, addPoints);
-   st.executeUpdate();
+   var actualPoints = c.prepareStatement(
+     "select id_listener, points" + " from competitor " + "where id_listener = ?");
 
-   ResultSet generatedKeys = st.getGeneratedKeys();
-   generatedKeys.next();
+   actualPoints.setInt(1, idCompetitor);
+
+   ResultSet resultSet = actualPoints.executeQuery();
+
+   if (resultSet.next()) {
+    addPoints += resultSet.getInt("points");
+    
+    var st = c.prepareStatement(
+      "update competitor set points = ? where id_listener = ?");
+
+    st.setInt(1, addPoints);
+    st.setInt(2, idCompetitor);
+    st.executeUpdate();
+   } else {
+    
+    var st = c.prepareStatement(
+      "insert into competitor(id_listener, points) " + "values(?,?)");
+
+    st.setInt(1, idCompetitor);
+    st.setInt(2, addPoints);
+    st.executeUpdate();
+   }
 
    PreparedStatement st2 = c.prepareStatement(
      "insert into inscription(id_competition, id_listener, inscription_date) "
