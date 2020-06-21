@@ -1,11 +1,11 @@
-package ar.cpfw.book.competition.model;
+package competition.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import ar.cpfw.book.competition.model.api.RadioCompetition;
-import ar.cpfw.book.competition.model.api.RadioProgram;
+import competition.model.api.RadioCompetition;
+import competition.model.api.RadioProgram;
 
 public class DefaultRadioProgram implements RadioProgram {
 

@@ -1,9 +1,9 @@
-package ar.cpfw.book.competition.model;
+package competition.model;
 
 import java.util.List;
 import java.util.Optional;
 
-import ar.cpfw.book.competition.model.api.RadioCompetition;
+import competition.model.api.RadioCompetition;
 
 public interface CompetitionRepository {
 

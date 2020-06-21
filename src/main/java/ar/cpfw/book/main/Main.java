@@ -1,8 +1,8 @@
 package ar.cpfw.book.main;
 
-import ar.cpfw.book.competition.model.DefaultRadioProgram;
-import ar.cpfw.book.competition.model.api.RadioCompetition;
-import ar.cpfw.book.competition.persistence.JdbcCompetitionRepository;
+import competition.model.DefaultRadioProgram;
+import competition.model.api.RadioCompetition;
+import competition.persistence.JdbcCompetitionRepository;
 
 public class Main {
 

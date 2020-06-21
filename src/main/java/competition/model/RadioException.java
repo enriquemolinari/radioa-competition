@@ -1,4 +1,4 @@
-package ar.cpfw.book.competition.model;
+package competition.model;
 
 public class RadioException extends RuntimeException {
 

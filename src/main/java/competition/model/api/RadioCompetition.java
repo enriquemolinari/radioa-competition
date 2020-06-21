@@ -1,4 +1,4 @@
-package ar.cpfw.book.competition.model.api;
+package competition.model.api;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

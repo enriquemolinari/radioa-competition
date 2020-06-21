@@ -1,6 +1,6 @@
 module radioa.competition {
 
- exports ar.cpfw.book.competition.model.api;
+ exports competition.model.api;
  
  requires java.sql;
  requires org.apache.derby.client;
