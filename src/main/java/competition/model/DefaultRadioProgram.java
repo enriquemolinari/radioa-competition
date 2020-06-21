@@ -4,15 +4,19 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import competition.model.api.Notification;
 import competition.model.api.RadioCompetition;
 import competition.model.api.RadioProgram;
 
 public class DefaultRadioProgram implements RadioProgram {
 
  private CompetitionRepository repository;
+ private Notification notification;
 
- public DefaultRadioProgram(CompetitionRepository repository) {
+ public DefaultRadioProgram(CompetitionRepository repository,
+   Notification notification) {
   this.repository = repository;
+  this.notification = notification;
  }
 
  @Override
@@ -60,5 +64,7 @@ public class DefaultRadioProgram implements RadioProgram {
 
   repository.addInscription(idCompetitor, idCompetition,
     competition.pointsForCompetitor());
+
+  notification.send(idCompetitor);
  }
 }
