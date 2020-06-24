@@ -19,17 +19,12 @@ public class JdbcCompetitionRepository implements CompetitionRepository {
 
  private String user;
  private String pwd;
- private String dbName;
- private String dbServer;
- private String dbPort;
+ private String connString;
 
- public JdbcCompetitionRepository(String user, String pwd, String dbName,
-   String dbServer, String dbPort) {
+ public JdbcCompetitionRepository(String user, String pwd, String connString) {
   this.user = user;
   this.pwd = pwd;
-  this.dbName = dbName;
-  this.dbServer = dbServer;
-  this.dbPort = dbPort;
+  this.connString = connString;
  }
 
  @Override
@@ -204,7 +199,7 @@ public class JdbcCompetitionRepository implements CompetitionRepository {
  }
 
  private Connection connection() {
-  String url = "jdbc:derby://" + dbServer + ":" + dbPort + "/" + dbName;
+  String url = this.connString;
   String user = this.user;
   String password = this.pwd;
   try {
