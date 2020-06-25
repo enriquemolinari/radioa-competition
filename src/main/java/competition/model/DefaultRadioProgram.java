@@ -65,6 +65,6 @@ public class DefaultRadioProgram implements RadioProgram {
   repository.addInscription(idCompetitor, idCompetition,
     competition.pointsForCompetitor());
 
-  notification.send(idCompetitor);
+  notification.send(idCompetitor, "Inscription done succesfully");
  }
 }
