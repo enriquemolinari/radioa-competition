@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import competition.model.api.RadioCompetition;
 import competition.model.api.RadioProgram;
-import competition.spi.CompetitionRepository;
-import competition.spi.RadioException;
+import competition.model.spi.CompetitionRepository;
+import competition.model.spi.RadioException;
 
 public class DefaultRadioProgram implements RadioProgram {
 

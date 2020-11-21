@@ -1,4 +1,4 @@
-package competition.spi;
+package competition.model.spi;
 
 public class RadioException extends RuntimeException {
 
