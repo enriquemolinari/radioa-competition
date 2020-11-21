@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import competition.model.CompetitionRepository;
-import competition.model.RadioException;
 import competition.model.api.RadioCompetition;
+import competition.spi.CompetitionRepository;
+import competition.spi.RadioException;
 
 public class JdbcCompetitionRepository implements CompetitionRepository {
 

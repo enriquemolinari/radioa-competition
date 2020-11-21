@@ -1,4 +1,4 @@
-package competition.model;
+package competition.spi;
 
 import java.util.List;
 import java.util.Optional;
